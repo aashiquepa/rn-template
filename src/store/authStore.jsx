@@ -49,7 +49,7 @@ export const useThemeStore = create(
     (set, get) => ({
       isDarkMode: true,
       theme: darkTheme,
-      ToggleTheme: () =>
+      toggleTheme: () =>
         set(state => ({
           isDarkMode: !state.isDarkMode,
           theme: state.isDarkMode ? lightTheme : darkTheme,

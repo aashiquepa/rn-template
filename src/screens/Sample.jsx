@@ -1,23 +1,26 @@
 import React from 'react';
-import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
-import {useThemeStore} from '../store/authStore';
+import {
+  SafeAreaView,
+  StyleSheet,
+  Text,
+  TouchableOpacity
+} from 'react-native';
+import { useThemeStore } from '../store/authStore';
 
 const Sample = () => {
-  const {isDarkMode, theme, ToggleTheme} = useThemeStore();
+  const {theme, toggleTheme} = useThemeStore();
   return (
-    <View className="flex-1 bg-slate-700">
+    <SafeAreaView className="flex-1 bg-slate-700">
       <TouchableOpacity
         className="text-black"
         onPress={() => {
-          ToggleTheme();
+          toggleTheme();
         }}>
-        <Text
-          className="text-white text-center"
-          style={{color: theme?.light}}>
+        <Text className="text-white text-center" style={{color: theme?.light}}>
           Press
         </Text>
       </TouchableOpacity>
-    </View>
+    </SafeAreaView>
   );
 };
 
